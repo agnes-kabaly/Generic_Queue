@@ -1,7 +1,7 @@
 public class Main {
 
     public static void main(String[] args) {
-        /*Queue<Integer> queueArray = new QueueArray<>(3);
+        Queue<Integer> queueArray = new QueueArray<>(3);
         System.out.println(queueArray.peek());
         System.out.println("First time, QueArray isEmpty(): " + queueArray.isEmpty());
         System.out.println("First time, QueArray isFull(): " + queueArray.isFull());
@@ -27,7 +27,7 @@ public class Main {
         System.out.println("Last time, QueArray isFull(): " + queueArray.isFull());
         System.out.println("Last time, QueArray getSize(): " + queueArray.getSize());
 
-        queueArray.display();*/
+        queueArray.display();
 
         Queue<Integer> queueLinkedList = new QueueLinkedList<>();
         System.out.println(queueLinkedList.peek());
@@ -51,6 +51,21 @@ public class Main {
         System.out.println("Third time, QueLinkedList getSize(): " + queueLinkedList.getSize());
         System.out.println("Last peek() is: " + queueLinkedList.peek());
         queueLinkedList.display();
+
+        queueLinkedList.dequeue();
+        System.out.println("After 1. dequeue(), peek() is: " + queueLinkedList.peek());
+        System.out.println("Last time, QueLinkedList getSize(): " + queueLinkedList.getSize());
+        queueLinkedList.display();
+
+        queueLinkedList.dequeue();
+        queueLinkedList.display();
+
+        queueLinkedList.dequeue();
+        queueLinkedList.display();
+
+        queueLinkedList.dequeue();
+        queueLinkedList.enqueue(1248);
+        System.out.println("QueLinkedList peek(): " + queueLinkedList.peek());
 
     }
 

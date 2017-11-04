@@ -18,15 +18,25 @@ public class QueueLinkedList<T> implements Queue<T> {
             rear = node;
         } else {
             rear.next = node;
-            rear = node;
+            rear = rear.next;
         }
         size++;
     }
 
     @Override
     public T dequeue() {
-        size--;
-        return null;
+        if (!isEmpty()) {
+            Node<T> newNode = front;
+            front = newNode.next;
+            if (front == null) {
+                rear = null;
+            }
+            size--;
+            return newNode.getData();
+        } else {
+            System.out.println("Queue is empty, dequeue() isn't possible");
+            return null;
+        }
     }
 
     @Override
@@ -54,12 +64,10 @@ public class QueueLinkedList<T> implements Queue<T> {
 
     @Override
     public int getSize() {
-        if (!isEmpty()) {
-            return size;
-        } else {
+        if (isEmpty()) {
             System.out.println("Queue is empty:");
-            return 0;
         }
+        return size;
     }
 
     @Override
