@@ -1,7 +1,7 @@
 public class Main {
 
     public static void main(String[] args) {
-        Queue<Integer> queueArray = new QueueArray<>(3);
+        /*Queue<Integer> queueArray = new QueueArray<>(3);
         System.out.println(queueArray.peek());
         System.out.println("First time, QueArray isEmpty(): " + queueArray.isEmpty());
         System.out.println("First time, QueArray isFull(): " + queueArray.isFull());
@@ -27,7 +27,30 @@ public class Main {
         System.out.println("Last time, QueArray isFull(): " + queueArray.isFull());
         System.out.println("Last time, QueArray getSize(): " + queueArray.getSize());
 
-        queueArray.display();
+        queueArray.display();*/
+
+        Queue<Integer> queueLinkedList = new QueueLinkedList<>();
+        System.out.println(queueLinkedList.peek());
+        System.out.println("First time, QueLinkedList isEmpty(): " + queueLinkedList.isEmpty());
+        System.out.println("First time, QueLinkedList isFull(): " + queueLinkedList.isFull());
+        System.out.println("First time, QueLinkedList getSize(): " + queueLinkedList.getSize());
+        queueLinkedList.display();
+
+        queueLinkedList.enqueue(11);
+        System.out.println("After enqueue(), peek() is: " + queueLinkedList.peek());
+        System.out.println("Second time, QueLinkedList isEmpty(): " + queueLinkedList.isEmpty());
+        System.out.println("Second time, QueLinkedList isFull(): " + queueLinkedList.isFull());
+        System.out.println("Second time, QueLinkedList getSize(): " + queueLinkedList.getSize());
+        queueLinkedList.display();
+
+        queueLinkedList.enqueue(88);
+        queueLinkedList.enqueue(132);
+        System.out.println("After 2. & 3. enqueue(), peek() is: " + queueLinkedList.peek());
+        System.out.println("Third time, QueLinkedList isEmpty(): " + queueLinkedList.isEmpty());
+        System.out.println("Third time, QueLinkedList isFull(): " + queueLinkedList.isFull());
+        System.out.println("Third time, QueLinkedList getSize(): " + queueLinkedList.getSize());
+        System.out.println("Last peek() is: " + queueLinkedList.peek());
+        queueLinkedList.display();
 
     }
 

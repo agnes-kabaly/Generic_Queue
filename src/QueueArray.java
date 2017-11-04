@@ -29,12 +29,6 @@ public class QueueArray<T> implements Queue<T> {
         if (!isEmpty()) {
             T element = array[front++];
             size--;
-            /*if (front == rear) {
-                front = -1;
-                rear = -1;
-            } else {
-                front++;
-            }*/
             return element;
         } else {
             System.out.println("Queue is empty, so dequeue() isn't possible");
