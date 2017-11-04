@@ -14,6 +14,11 @@ public class QueueArray<T> implements Queue<T> {
 
     @Override
     public void enqueue(T element) {
+        if (!isFull()) {
+            array[rear++] = element;
+        } else {
+            System.out.println("Queue is full, so enqueue() isn't possible");
+        }
 
     }
 
@@ -43,7 +48,7 @@ public class QueueArray<T> implements Queue<T> {
 
     @Override
     public boolean isFull() {
-        if (rear == maxSize - 1) {
+        if (rear == maxSize) {
             return true;
         } else {
             return false;
@@ -53,7 +58,7 @@ public class QueueArray<T> implements Queue<T> {
     @Override
     public int getSize() {
         if (!isEmpty()) {
-            return rear + 1;
+            return rear;
         } else {
             System.out.println("Queue is empty");
             return 0;
