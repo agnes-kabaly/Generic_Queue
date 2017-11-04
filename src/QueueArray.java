@@ -4,10 +4,12 @@ public class QueueArray<T> implements Queue<T> {
     private int rear;
     private int maxSize;
     private T[] array;
+    private int size;
 
     public QueueArray(int maxSize) {
         front = 0;
         rear = 0;
+        size = 0;
         this.maxSize = maxSize;
         array = (T[]) new Object[maxSize];
     }
@@ -15,16 +17,29 @@ public class QueueArray<T> implements Queue<T> {
     @Override
     public void enqueue(T element) {
         if (!isFull()) {
+            size++;
             array[rear++] = element;
         } else {
             System.out.println("Queue is full, so enqueue() isn't possible");
         }
-
     }
 
     @Override
     public T dequeue() {
-        return null;
+        if (!isEmpty()) {
+            T element = array[front++];
+            size--;
+            /*if (front == rear) {
+                front = -1;
+                rear = -1;
+            } else {
+                front++;
+            }*/
+            return element;
+        } else {
+            System.out.println("Queue is empty, so dequeue() isn't possible");
+            return null;
+        }
     }
 
     @Override
@@ -58,7 +73,7 @@ public class QueueArray<T> implements Queue<T> {
     @Override
     public int getSize() {
         if (!isEmpty()) {
-            return rear;
+            return size;
         } else {
             System.out.println("Queue is empty");
             return 0;
@@ -67,6 +82,13 @@ public class QueueArray<T> implements Queue<T> {
 
     @Override
     public void display() {
-
+        if (!isEmpty()) {
+            System.out.println("Queue:");
+            for (int i = front; i < rear; i++) {
+                System.out.println(array[i]);
+            }
+        } else {
+            System.out.println("Queue is empty");
+        }
     }
 }

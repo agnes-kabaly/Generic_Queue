@@ -19,7 +19,16 @@ public class Main {
 
         queueArray.enqueue(66);
         System.out.println("Third time, QueArray getSize(): " + queueArray.getSize());
-        System.out.println("Third time, peek() is: " + queueArray.peek());
+        System.out.println("Third time, peek() is: " + queueArray.peek() + "\n");
+
+        queueArray.dequeue();
+        System.out.println("After dequeue(), peek() is: " + queueArray.peek());
+        System.out.println("Last time, QueArray isEmpty(): " + queueArray.isEmpty());
+        System.out.println("Last time, QueArray isFull(): " + queueArray.isFull());
+        System.out.println("Last time, QueArray getSize(): " + queueArray.getSize());
+
+        queueArray.display();
+
     }
 
 
